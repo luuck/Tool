@@ -3,18 +3,18 @@
 
 ### 使用方法
 1、引入文件
-```
+```Javascript
 <script src="https://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
 <script src="jquery.sidebar.js"></script>
 ```
 
 2、HTML
-```
+```HTML
 <div class="sidebar"></div>
 ```
 
 3、Javascript
-```
+```Javascript
 $('.sidebar').sidebar({
     width: 100,
     height: 300,

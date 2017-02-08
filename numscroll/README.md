@@ -3,18 +3,18 @@
 
 ### 使用方法
 1、引入文件
-```
+```CSS
 <link rel="stylesheet" href="css/index.css?v=20170208">
 ```
 css样式是必须的需要引入
 
-```
+```Javascript
 <script src="https://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
 ```
 依赖于这个jquery,必须引入
 
 2、HTML
-```
+```HTML
 <div class="top-con-nums">
         <span class="sp1"><em></em></span>
         <span class="sp2"><em></em></span>
@@ -27,7 +27,7 @@ css样式是必须的需要引入
 ```
 
 3、Javascript
-```
+```Javascript
  var arrTop = [0, 68, 135, 203, 271, 339, 408, 477, 545, 614], //数字滚动坐标
         numScrollLength = $('.top-con-nums em').length,
         $numScroll = $('.top-con-nums em');
