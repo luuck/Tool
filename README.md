@@ -11,4 +11,6 @@
 
 ------
 ## 工具（tool）
+### 1.numscroll
+数字滚动 [numscroll](https://github.com/luuck/tool/tree/master/numscroll)
 
