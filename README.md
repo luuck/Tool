@@ -8,7 +8,7 @@
 ## 插件（Plugin）
 ### 1.siderbar
 右悬浮窗插件 [siderbar](https://github.com/luuck/tool/tree/master/siderbar)
-[demo](https://luuck.github.io/tool/numscroll/index.html)
+[demo](https://luuck.github.io/tool/siderbar/siderbar.html)
 
 ------
 ## 工具（tool）
