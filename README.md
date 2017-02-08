@@ -8,9 +8,11 @@
 ## 插件（Plugin）
 ### 1.siderbar
 右悬浮窗插件 [siderbar](https://github.com/luuck/tool/tree/master/siderbar)
+[demo](https://luuck.github.io/tool/numscroll/index.html)
 
 ------
 ## 工具（tool）
 ### 1.numscroll
 数字滚动 [numscroll](https://github.com/luuck/tool/tree/master/numscroll)
+[demo](https://luuck.github.io/tool/numscroll/index.html)
 
