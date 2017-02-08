@@ -1,0 +1,11 @@
+.top-con-nums{ position: absolute;  width: 310px;height: 110px;}
+.top-con-nums span{display: inline-block;width: 31px;height: 42px;text-indent: -9999px;background-color: #27AE60;overflow: hidden;}
+.top-con-nums .sp1{position: absolute;top:30px;left: 10px;}
+.top-con-nums .sp2{position: absolute;/*top:46px;*/top:30px;left: 52px;}
+.top-con-nums .sp3{position: absolute;/*top:40px;*/top:30px;left: 96px;}
+.top-con-nums .sp4{position: absolute;/*top:34px;*/top:30px;left: 140px;}
+.top-con-nums .sp5{position: absolute;/*top:28px;*/top:30px;left: 182px;}
+.top-con-nums .sp6{position: absolute;/*top:24px;*/top:30px;left: 226px;}
+.top-con-nums .sp7{position: absolute;/*top:18px;*/top:30px;left: 270px;}
+.top-con-nums em{position: absolute;top: 0;left: 0;display: inline-block;width: 100%;height: 655px;background: url("../images/num-png24.png") center 0px no-repeat;_background-image: url("../images/num-png8.png");}
+
