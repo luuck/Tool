@@ -12,7 +12,9 @@
     var isIe6 = 'undefined' == typeof(document.body.style.maxHeight);
     var lr = {
         scroll: function() {
-            scrollTop = isFixedTop ? $(window).scrollTop() + fixedTopDis : $(window).scrollTop() + fromBottom;
+            var _scrollTop = $(window).height() / 2 - args.height / 2;
+            _scrollTop += $(window).scrollTop();
+            // scrollTop = isFixedTop ? $(window).scrollTop() + fixedTopDis : $(window).scrollTop() + fromBottom;
             $sidebar.css('top', scrollTop + 'px');
         },
         initCss: function(args) {
@@ -62,7 +64,8 @@
                     $sidebar.css({ 'top': args.fixedTopDis, 'position': 'fixed' });
                     return;
                 }
-                var _scrollTop = $(window).height() / 2 - fromBottom;
+                // var _scrollTop = $(window).height() / 2 - fromBottom;
+                var _scrollTop = $(window).height() / 2 - args.height / 2;
                 $sidebar.css({ 'top': _scrollTop, 'position': 'fixed' });
             }
 
@@ -84,6 +87,7 @@
                 color: '',
                 backFn: function() {}
             }, options);
+            $(this).css('z-index',100);
             lr.init($(this), args);
         });
     };
