@@ -11,6 +11,7 @@
 依赖于这个jquery,必须引入
 
 2、introtip.js对外暴露的方法有
+
 ![](https://raw.githubusercontent.com/luuck/tool/master/introtip/assets/img/intropImg.jpg)
 
 3、如何使用？
