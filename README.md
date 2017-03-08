@@ -16,3 +16,6 @@
 数字滚动 [source](https://github.com/luuck/tool/tree/master/numscroll)
 [demo](https://luuck.github.io/tool/numscroll/index.html)
 
+### 2.introtip
+引导提示框[source](https://github.com/luuck/tool/tree/master/introtip)
+[demo](https://luuck.github.io/tool/introtip/index.html)
