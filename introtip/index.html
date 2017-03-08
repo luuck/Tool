@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>引导提示弹窗组件</title>
+    <style>
+        span{font-size: 12px;color: #e2e5e1;}
+    </style>
+</head>
+
+<body>
+    <span>聚焦看看</span>
+    <input type="text" id="ipt">
+    <script src="https://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+    <script src="assets/js/introtip.js"></script>
+    <script>
+    // 配置项
+    var configInfo = {
+        obj: '#ipt',
+        top: 80,
+        left: 40,
+        callback: function() {}
+    };
+
+    // var introTipOBJ1 = new IntroTip(configInfo);
+    var introTipOBJ1 = IntroTip(configInfo);
+
+    introTipOBJ1.init(configInfo);
+    $('#ipt').focus(function() { // 聚焦
+        introTipOBJ1.iptFocus(configInfo);
+    });
+
+    $('#ipt').blur(function() { // 失焦
+        introTipOBJ1.iptBlur(configInfo);
+    });
+    </script>
+</body>
+
+</html>

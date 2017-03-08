@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>引导提示弹窗</title>
+    <style>
+    body,
+    html {
+        background-color: none;
+    }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="ipt">
+    <script src="http://static.tcy365.org:1505/cdn/jquery/1.7.2/jquery.js"></script>
+    <script src="assets/js/jquery.introtip.js"></script>
+    <script>
+
+    // 配置项
+    var configInfo = {
+        obj: '#ipt',
+        top: 80,
+        left: 40,
+        isShow: false, // 初始化不显示
+        isHover: false, // 悬停显示
+        callback: function() {}
+    };
+
+    $.showIntroTip(configInfo); // 初始化
+
+    $('#ipt').focus(function() { // 聚焦
+        window.showIntroTip.iptFocus(configInfo);
+    });
+
+    $('#ipt').blur(function() { // 失焦
+        window.showIntroTip.iptBlur();
+    });
+    </script>
+</body>
+
+</html>
