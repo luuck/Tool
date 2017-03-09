@@ -17,13 +17,15 @@
     <script>
     // 配置项
     var configInfo = {
-        obj: '#ipt',
-        top: 80,
-        left: 40,
+        obj: '#ipt', // 必填
+        width: 430, // 图片的宽度
+        height: 303, // 图片的高度
+        imgUrl: 'tip.png', // 图片路径
+        top: 40, // 图片距离顶部
+        left: 40, // 图片距离左边
         callback: function() {}
     };
 
-    // var introTipOBJ1 = new IntroTip(configInfo);
     var introTipOBJ1 = IntroTip(configInfo);
 
     introTipOBJ1.init(configInfo);
