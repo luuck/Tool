@@ -4,36 +4,31 @@
  */
 (function() {
     var $ipt;
-    var $introtip; 
+    var $introtip;
     var interval; // 定时器
     var intervalBool;
-    var isIe6 = 'undefined' == typeof(document.body.style.maxHeight);
+    // var isIe6 = 'undefined' == typeof(document.body.style.maxHeight);
     var isIptfoucs = false; // 未聚焦
 
     var showIntroTipObj = {
         option: {
             obj: '#ipt',
+            width: 0,
+            height: 0,
+            imgUrl: '',
             top: 0,
             left: 0,
             callback: function() {}
-        }, 
+        },
         hideTip: function() { // 隐藏
-            if (isIe6) {
-                $introtip.hide();
-            } else {
-                $introtip.stop().animate({
-                    'opacity': 0
-                }, 700);
-            }
+            $introtip.stop().animate({
+                'opacity': 0
+            }, 700);
         },
         showTip: function() { // 显示
-            if (isIe6) {
-                $introtip.show();
-            } else {
-                $introtip.stop().animate({
-                    'opacity': 1
-                }, 700);
-            }
+            $introtip.stop().animate({
+                'opacity': 1
+            }, 700);
         },
         isClearInterval: function() { // 清除定时器
             intervalBool = typeof(interval) == 'undefined';
@@ -59,7 +54,11 @@
             interval = setTimeout(function() {
                 _this.hideTip();
                 $introtip.hover(function() {
-                    _this.isClearInterval(); // 是否需要清除定时器
+                    _this.showTip();
+                    _this.isClearInterval(); // 是否需要清除定时器 - 移入
+                }, function() {
+                    _this.hideTip();
+                    $introtip.unbind('hover');
                 });
             }, 3000);
         },
@@ -99,13 +98,13 @@
         },
         initCss: function(obj, args) {
             $(obj).css({
-                'width': '430px',
-                'height': '303px',
+                'width': args.width + 'px',
+                'height': args.height + 'px',
                 'position': 'absolute',
                 'top': args.top + 'px',
                 'left': args.left + 'px',
                 'overflow': 'hidden',
-                'background-image': 'url(assets/img/tip.png)',
+                'background-image': 'url(' + args.imgUrl + ')',
                 'z-index': 9999,
                 'opacity': 0
             });
@@ -133,10 +132,10 @@
             iptBlur: function(opts) { // 失焦
                 showIntroTipObj.iptBlur(opts);
             },
-            show: function(opts){ // 显示
+            show: function(opts) { // 显示
                 showIntroTipObj.show(opts);
             },
-            hide: function(){ // 隐藏
+            hide: function() { // 隐藏
                 showIntroTipObj.hide();
             }
         };
