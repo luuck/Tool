@@ -16,18 +16,18 @@
 
 3、如何使用？
 ```Javascript
-   // 配置项
+  // 配置项
     var configInfo = {
         obj: '#ipt', // 必填
-        width: 430, // 图片的宽度
-        height: 303, // 图片的高度
-        imgUrl: 'https://raw.githubusercontent.com/luuck/tool/master/introtip/assets/img/tip.png', // 图片路径
+        width: 427, // 图片的宽度
+        height: 301, // 图片的高度
+        imgUrl: 'http://static.tcy365.org:1505/common/component/pc/introtip/1.0.0/tip.png',//'tip.png', // 图片路径 http://static.tcy365.org:1505/common/component/pc/introtip/1.0.0/tip.png
+        imgUrlie: 'http://static.tcy365.org:1505/common/component/pc/introtip/1.0.0/tip_ie.png', //ie6下的图片路径
         top: 40, // 图片距离顶部
         left: 40, // 图片距离左边
         callback: function() {}
     };
 
-    // var introTipOBJ1 = new IntroTip(configInfo);
     var introTipOBJ1 = IntroTip(configInfo);
 
     introTipOBJ1.init(configInfo);
