@@ -21,8 +21,8 @@
         obj: '#ipt', // 必填
         width: 427, // 图片的宽度
         height: 301, // 图片的高度
-        imgUrl: 'http://static.tcy365.org:1505/common/component/pc/introtip/1.0.0/tip.png',//'tip.png', // 图片路径 http://static.tcy365.org:1505/common/component/pc/introtip/1.0.0/tip.png
-        imgUrlie: 'http://static.tcy365.org:1505/common/component/pc/introtip/1.0.0/tip_ie.png', //ie6下的图片路径
+        imgUrl: 'tip.png', // 图片路径 
+        imgUrlie: '', //ie6下的图片路径
         top: 40, // 图片距离顶部
         left: 40, // 图片距离左边
         callback: function() {}
