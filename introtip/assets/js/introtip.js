@@ -7,7 +7,7 @@
     var $introtip;
     var interval; // 定时器
     var intervalBool;
-    // var isIe6 = 'undefined' == typeof(document.body.style.maxHeight);
+    var isIe6 = 'undefined' == typeof(document.body.style.maxHeight);
     var isIptfoucs = false; // 未聚焦
 
     var showIntroTipObj = {
@@ -16,19 +16,24 @@
             width: 0,
             height: 0,
             imgUrl: '',
+            imgUrlie: '',
             top: 0,
             left: 0,
             callback: function() {}
         },
         hideTip: function() { // 隐藏
             $introtip.stop().animate({
-                'opacity': 0
-            }, 700);
+                'opacity': 0,
+            }, 1000,function(){
+                $introtip.css('display','none');
+                $introtip.unbind('hover');
+            });
         },
         showTip: function() { // 显示
+            $introtip.css('display','block');
             $introtip.stop().animate({
                 'opacity': 1
-            }, 700);
+            }, 1000);
         },
         isClearInterval: function() { // 清除定时器
             intervalBool = typeof(interval) == 'undefined';
@@ -58,9 +63,8 @@
                     _this.isClearInterval(); // 是否需要清除定时器 - 移入
                 }, function() {
                     _this.hideTip();
-                    $introtip.unbind('hover');
                 });
-            }, 3000);
+            }, 2000);
         },
         iptHover: function(opts) { // 悬停-废弃
             var _this = this;
@@ -104,14 +108,22 @@
                 'top': args.top + 'px',
                 'left': args.left + 'px',
                 'overflow': 'hidden',
-                'background-image': 'url(' + args.imgUrl + ')',
-                'z-index': 9999,
+                //'background-image': 'url(' + args.imgUrl + ')',
+                // 'display':'none',
+                // 'z-index': 9999,
                 'opacity': 0
             });
+            if(isIe6){
+                 $(obj).css('background-image','url(' + args.imgUrlie + ')');
+            }else{
+                $(obj).css('background-image','url(' + args.imgUrl + ')');
+            }
         },
         initHtml: function(opts) {
             $ipt = $(opts.obj);
-            $ipt.after('<div class="introTip"></div>');
+            if($('.introTip').length === 0){
+                $ipt.after('<div class="introTip"></div>');
+            }
             $introtip = $('.introTip');
         },
         init: function(opts) {
