@@ -23,14 +23,14 @@
         },
         hideTip: function() { // 隐藏
             $introtip.stop().animate({
-                'opacity': 0,
-            }, 1000,function(){
-                $introtip.css('display','none');
+                'opacity': 0
+            }, 1000, function() {
+                $introtip.css('display', 'none');
                 $introtip.unbind('hover');
             });
         },
         showTip: function() { // 显示
-            $introtip.css('display','block');
+            $introtip.css('display', 'block');
             $introtip.stop().animate({
                 'opacity': 1
             }, 1000);
@@ -56,14 +56,22 @@
         },
         autoDisappear: function() { // 自动消失
             var _this = this;
+
+            $introtip.hover(function() {
+                _this.showTip();
+                _this.isClearInterval(); // 是否需要清除定时器 - 移入
+            }, function() {
+                _this.hideTip();
+            });
+
             interval = setTimeout(function() {
                 _this.hideTip();
-                $introtip.hover(function() {
-                    _this.showTip();
-                    _this.isClearInterval(); // 是否需要清除定时器 - 移入
-                }, function() {
-                    _this.hideTip();
-                });
+                // $introtip.hover(function() {
+                //     _this.showTip();
+                //     _this.isClearInterval(); // 是否需要清除定时器 - 移入
+                // }, function() {
+                //     _this.hideTip();
+                // });
             }, 2000);
         },
         iptHover: function(opts) { // 悬停-废弃
@@ -113,16 +121,21 @@
                 // 'z-index': 9999,
                 'opacity': 0
             });
-            if(isIe6){
-                 $(obj).css('background-image','url(' + args.imgUrlie + ')');
-            }else{
-                $(obj).css('background-image','url(' + args.imgUrl + ')');
+
+            if (isIe6) {
+                $(obj).css('background-image', 'url(' + args.imgUrlie + ')');
+            } else {
+                $(obj).css('background-image', 'url(' + args.imgUrl + ')');
             }
         },
         initHtml: function(opts) {
             $ipt = $(opts.obj);
-            if($('.introTip').length === 0){
-                $ipt.after('<div class="introTip"></div>');
+            if ($('.introtip_wrap').length === 0) {
+                $ipt.after('<span class="introtip_wrap"><span class="introTip"></span></span>');
+                $('.introtip_wrap').css({
+                    'position': 'relative',
+                    'z-index': 9999
+                });
             }
             $introtip = $('.introTip');
         },
