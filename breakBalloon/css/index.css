@@ -1,0 +1,67 @@
+/*base*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+body, button, input, select, textarea { font:12px / 1.5 arial,'宋体', \5b8b\4f53; }
+h1, h2, h3, h4, h5, h6 { font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:courier new, courier, monospace; }
+small { font-size:12px; }
+ul, ol { list-style:none;}
+a { text-decoration:none; }
+a:hover { text-decoration:underline; }
+sup { vertical-align:text-top; }
+sub { vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0 none; }
+button, input, select, textarea { font-size:100%; outline:none;}
+table { border-collapse:collapse; border-spacing:0; }
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { display: inline-table; }
+.clearfix { display: block; }
+.clearfix { *min-height: 1%;_height: 1%; }
+.ellipsis{overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+a{ color: #157bbb; cursor:pointer; outline:none;}
+a:hover{ color:#951901; text-decoration: none; }
+.content{ width: 980px; margin:0 auto;}
+.content:after { content: ""; display: block; height: 0; clear: both;  }
+.red{ color:#FF0000}
+body{ background: #FFFFFF; }
+.none{ display:none;}
+.yahei{font-family:"Microsoft YaHei",微软雅黑;}
+.simsun{font-family: "Simsun";}
+
+/*sec3击破气球*/
+.sec3-con{width: 990px;height: 639px;margin: 0 auto;background: url(../img/s3-con.jpg) no-repeat;position: relative;}
+.sec3-con .content{position: absolute;width: 216px;height: 82px;text-align: center;}
+.sec3-con .c1{top: 16px;left: 90px;}/*需要调整*/
+.sec3-con .c2{top: 16px;left: 382px;}/*需要调整*/
+.sec3-con .c3{top: 16px;left: 676px;}/*需要调整*/
+.sec3-con .content h3{font-size:25px;color: #dba56a;font-weight: 400;margin-bottom: 6px;}
+.sec3-con .content h3 .sp1{font-weight: 700;}
+.sec3-con .content p{font-size: 23px;color: #966639;font-weight: 700;}
+.sec3-con .content p span{color:#dcae5e;margin-right: 5px;}
+.sec3-con .bullet-container{position: absolute;width: 200px;height: 40px;line-height: 40px;top: 582px;left: 700px;text-align: center;font-size: 23px;color: #ffffff;font-family: "Microsoft YaHei","微软雅黑";}
+
+.sec3-con .ballon-box{position: relative;top: 132px;left: 80px;}/*需要调整*/
+.sec3-con .list{width: 850px;height: 424px;overflow: hidden;padding-left: 20px;margin-left: -20px;/*position: absolute;*/}
+.sec3-con .list li{ float:left; width:150px; height:182px; margin:0 18px 25px 0; text-align:center;position: relative;}
+.sec3-con .balloon{ background:url(../img/spr-png24.png) no-repeat;_background:url(../img/spr-png8.png) no-repeat; width:150px; height:157px; padding-top:25px;}
+.sec3-con .list li .c01{ background-position:0 0;}
+.sec3-con .list li .c02{ background-position:-155px 0;}
+.sec3-con .list li .c03{ background-position:-313px  0;}
+.sec3-con .list li .c04{ background-position:-470px 0;}
+.sec3-con .list li .c05{ background-position:-621px 0;}
+.sec3-con .list li .gift{ text-align:center;}
+.sec3-con .list li.hit_on .balloon{ background:url(../img/spr-png24.png) no-repeat -908px 0;_background:url(../img/spr-png8.png) no-repeat -908px 0; width:150px; height:120px; }
+.sec3-con .list li.hit_on .gift{ display:none;}
+.sec3-con .sights{ display: none;top:-300px;left:-300px;background:url(../img/spr-png24.png) no-repeat -778px -27px;_background:url(../img/spr-png8.png) no-repeat -778px -27px; position:absolute;width:104px; height:101px; z-index:5; text-indent:-999em;cursor:pointer;}
+/*.sec3-con .sights:hover{cursor:url(../img/mouse.ico);}*/
+
+.ani-act{-webkit-animation:ani_act 2s ease-in-out 0s infinite both; animation:ani_act 2s ease-in-out 0s infinite both;}
+@-webkit-keyframes ani_act{
+    0%,100%{-webkit-transform:rotate(0deg);-webkit-transform-origin:center bottom;}
+    50%{-webkit-transform:rotate(-5deg);-webkit-transform-origin:center bottom;}
+}
+@keyframes ani_act{
+    0%,100%{transform:rotate(0deg);transform-origin:center bottom;}
+    50%{transform:rotate(-5deg);transform-origin:center bottom;}
+}
