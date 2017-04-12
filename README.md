@@ -7,7 +7,7 @@
 ------
 
 ## 小游戏（games）
-### 1.breakBalloon
+### 1.breakballoon
 击破气球[source](https://github.com/luuck/tool/tree/master/breakballoon)
 [demo](https://luuck.github.io/tool/breakballoon/index.html)
 
