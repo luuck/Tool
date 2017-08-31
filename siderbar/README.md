@@ -14,20 +14,46 @@
 ```
 
 3、Javascript
-```Javascript
-$('.sidebar').sidebar({
-    width: 100,
-    height: 300,
-    pageContentWidth: 1020, //设置内容宽度，决定浮窗显示的位置，如果为0，则靠右显示，并可设置marginRight
-    marginRight: 0,
-    isFixedTop: false, // 是否固定在顶部
-    fixedTopDis: 0, // 固定在顶部后距离顶部的高度
-    isScrollShow: false, // 距离顶部低于100隐藏
-    color: '#1ab992', // 为空则无色
-    backFn: function() {
-        // 回调函数处理
-    }
-});
+```
+ var siderbar = new Sidebar({
+            wrapper: '.side', // 必填,选择器
+            pageW: '.container',
+            width: 249,
+            height: 612,
+
+            // 设置内容宽度，决定浮窗显示的位置，
+            // 默认为0，则直接靠左或者靠右
+            // 否则，靠近内容边缘
+            pageContentWidth: 1000,
+
+            // 距离左边或者右边边缘的距离(数值)
+            // 带票position的第一个参数"left"或者"right"使用
+            lrDistance: 0,
+            // 距离上边或者下边边缘的距离(数值)
+            // 搭配position的第二个参数为"top"或者"bottom"使用
+            tbDistance: 0,
+
+            // 必须设置两个参数：
+            // 第一个参数可赋值"left"或者"right"
+            // 第二个参数可赋值"top"或者"bottom"或者"middle"
+            // 默认["right","mid"]
+            position:["left", "top"],
+
+            // 滚动到距离顶部200时显示(数值)
+            scrollTopShow: 600,
+            callfn: function(){
+                 // 回调处理
+                /*if($(window).scrollTop()<600){
+                    $('.side').css({
+                        position: 'absolute',
+                        top: 600,
+                        left: 0,
+                        width: 249
+                    })
+                }*/
+
+            }
+        });
 ```
 
 
