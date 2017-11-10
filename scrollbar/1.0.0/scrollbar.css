@@ -1,0 +1,8 @@
+body, html {margin: 0;padding: 0;}
+.m-record{position: absolute;display: inline-block;background-color: #F4F4F4;
+    top: 20px;left: 20px;font-size: 14px;color: #8e959a;}
+.m-record ul,.m-record ul li{margin: 0;padding: 0;list-style: none;}
+.m-record ul{margin: 10px 0 10px 10px;}
+.m-record ul li{margin-bottom: 10px;}
+/*滚动条底层背景的颜色*/
+/*.nicescroll-rails {background-color: #000;border-radius: 5px;}*/

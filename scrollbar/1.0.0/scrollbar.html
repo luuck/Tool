@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>局部无线滚动-滚动条</title>
+    <meta name="Keywords" content="局部无线滚动-滚动条">
+    <meta name="description" content="局部无线滚动-滚动条"/>
+    <link rel="stylesheet" href="scrollbar.css">
+</head>
+<body class="yahei">
+
+<!--第一个demo-->
+<div class="m-record">
+    <ul class="m-record-content J-recordlist"></ul>
+</div>
+
+<!--第二个demo-->
+<div style="right: 10px;position: absolute;top: 10px;background-color: #E9EBEB;">
+    <ul class="m-record-content J-recordlist1"></ul>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<script src="jquery.nicescroll.js"></script>
+<script src="jquery.scrollbar.js"></script>
+
+<script>
+    // 静态模拟的数据
+    var ajaxData = [{Id: 1, UserName: '随便写写1' + parseInt(Math.random() * 10), Time: new Date()},
+        {Id: 2, UserName: '随便写写2' + parseInt(Math.random() * 10), Time: new Date()},
+        {Id: 3, UserName: '随便写写3' + parseInt(Math.random() * 10), Time: new Date()},
+        {Id: 4, UserName: '随便写写4' + parseInt(Math.random() * 10), Time: new Date()},
+        {Id: 5, UserName: '随便写写1' + parseInt(Math.random() * 10), Time: new Date()},
+        {Id: 6, UserName: '随便写写2' + parseInt(Math.random() * 10), Time: new Date()},
+        {Id: 7, UserName: '随便写写3' + parseInt(Math.random() * 10), Time: new Date()},
+        {Id: 8, UserName: '随便写写4' + parseInt(Math.random() * 10), Time: new Date()}];
+
+    var scrollbar1 = new Scrollbar({
+        wrapper: '.J-recordlist', // 必填，选择器
+        width: 256,
+        height: 235,
+
+        // 美化滚动条的参数配置
+        niceScroll: {
+            cursorcolor: '#e41d1d',//#CC0071 光标颜色
+            cursoropacitymax: .6, //改变不透明度非常光标处于活动状态（scrollabar“可见”状态），范围从1到0
+            touchbehavior: false, //使光标拖动滚动像在台式电脑触摸设备
+            cursorwidth: '5px', //像素光标的宽度
+            cursorborder: '0', // 游标边框css定义
+            cursorborderradius: '5px',//以像素为光标边界半径
+            autohidemode: false //是否隐藏滚动条
+        },
+
+        // 默认false不需要滚动加载,true需要滚动加载更多数据
+        // 当scrollload为true时，callback回调函数才有效
+        scrollload: true,
+        callback: function(){
+            getData('.J-recordlist');
+        },
+
+        // 在初始化美化滚动条之前处理的函数
+        beforeload: function(){
+            getData('.J-recordlist');
+        }
+    });
+
+    /************************************************************/
+
+    var scrollbar2 = new Scrollbar({
+        wrapper: '.J-recordlist1', // 必填，选择器
+        width: 256,
+        height: 235,
+
+        // 美化滚动条的参数配置
+        niceScroll: {
+            cursorcolor: '#e41d1d',//#CC0071 光标颜色
+            cursoropacitymax: .6, //改变不透明度非常光标处于活动状态（scrollabar“可见”状态），范围从1到0
+            touchbehavior: false, //使光标拖动滚动像在台式电脑触摸设备
+            cursorwidth: '5px', //像素光标的宽度
+            cursorborder: '0', // 游标边框css定义
+            cursorborderradius: '5px',//以像素为光标边界半径
+            autohidemode: false //是否隐藏滚动条
+        },
+
+        // 默认false不需要滚动加载,true需要滚动加载更多数据
+        // 当scrollload为true时，callback回调函数才有效
+        scrollload: false,
+        callback: function(){
+            getData('.J-recordlist1');
+        },
+
+        // 在初始化美化滚动条之前处理的函数
+        beforeload: function(){
+            getData('.J-recordlist1');
+        }
+    });
+
+    function getData(cls){
+        var $recordlist = $(cls);
+        /**
+         * 这里把ajax请求返回的数据进行拼接并且渲染出来
+         * 以下是参考
+         */
+        var _html = '';
+        var _arr = [];
+        $.each(ajaxData, function(index, value){
+            _html =  '<li data-id="' + value.Id + '">' + '&nbsp;' + value.UserName + '&nbsp;' + '<br/>'
+                + '时间：' + value.Time + '</li>';
+            _arr.push(_html);
+        });
+        $recordlist.append(_arr.join(''));
+    }
+</script>
+
+</body>
+</html>
