@@ -5,29 +5,6 @@
     <meta charset="UTF-8">
     <title>浮窗demo</title>
     <style>
-<<<<<<< HEAD
-    * {
-        margin: 0;
-        padding: 0;
-    }
-    
-    .pageContent {
-        height: 1400px;
-        width: 100%;
-        background-color: #f1f1f1;
-    }
-    
-    .content {
-        width: 980px;
-        height: 900px;
-        background-color: #f1f1f1;
-        margin: 0 auto;
-    }
-
-    .sidebar{
-        background-color: yellow;
-    }
-=======
         * {
             margin: 0;
             padding: 0;
@@ -48,61 +25,10 @@
 
         .sidebar{background-color: #1eca1e;}
         .sidebar1{background-color: yellow;}
->>>>>>> origin/master
     </style>
 </head>
 
 <body>
-<<<<<<< HEAD
-    <div class="pageContent">
-        <div class="content"></div>
-    </div>
-    <div class="sidebar"></div>
-    <script src="https://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
-    <script src="jquery.sidebar.js"></script>
-    <script>
-           var siderbar = new Sidebar({
-            wrapper: '.sidebar', // 必填,选择器
-            // ie6下需要填写此参数，.container
-            // 相对某一个容器
-            pageW: '', 
-            width: 249,
-            height: 612,
-
-            // 设置内容宽度，决定浮窗显示的位置，
-            // 默认为0，则直接靠左或者靠右
-            // 否则，靠近内容边缘
-            pageContentWidth: 1000,
-
-            // 距离左边或者右边边缘的距离(数值)
-            // 带票position的第一个参数"left"或者"right"使用
-            lrDistance: 0,
-            // 距离上边或者下边边缘的距离(数值)
-            // 搭配position的第二个参数为"top"或者"bottom"使用
-            tbDistance: 0,
-
-            // 必须设置两个参数：
-            // 第一个参数可赋值"left"或者"right"
-            // 第二个参数可赋值"top"或者"bottom"或者"middle"
-            // 默认["right","mid"]
-            position:["right", "top"],
-
-            // 滚动到距离顶部200时显示(数值)
-            scrollTopShow: 600,
-            callfn: function(){
-                if($(window).scrollTop()<600){
-                    $('.side').css({
-                        position: 'absolute',
-                        top: 600,
-                        left: 0,
-                        width: 249
-                    });
-                }
-
-            }
-        });
-    </script>
-=======
 <div class="pageContent">
     <div class="content"></div>
 </div>
@@ -171,7 +97,6 @@
     });
 
 </script>
->>>>>>> origin/master
 </body>
 
 </html>

@@ -21,27 +21,23 @@
         this._opts.position = opts.position || ['right','middle'];
         this._opts.scrollTopShow = opts.scrollTopShow || 0;
         this._opts.scrollfn = function(){};
-        this._opts.callfn = opts.callfn || function(){};
         this._init(this._opts);
     }
 
     Sidebar.prototype = {
         _scroll: function(args){
+            var _OffsetMidNum;
             var _a;
             $sidebar = $(args.wrapper);
 
             if(args.position[1].toLowerCase() === 'bottom') {
-                _a = $(window).height() + $(window).scrollTop() - $sidebar.height() - args.tbDistance;
+                _OffsetMidNum = $(window).height() / 2 < $sidebar.height() ? $sidebar.height() / 2 : $sidebar.height();
+                _a = $(window).height() / 2 + $(window).scrollTop() + _OffsetMidNum + args.tbDistance;
                 $sidebar.css({'top': _a});
                 return;
-
             }else if(args.position[1].toLowerCase() === 'top'){
                 _a = $(window).scrollTop() + args.tbDistance ;
-                if(_a < args.scrollTopShow){
-                    $sidebar.css({'top': args.scrollTopShow});
-                }else{
-                    $sidebar.css({'top': _a});
-                }
+                $sidebar.css({'top': _a});
                 return;
             }
 
@@ -50,12 +46,11 @@
             $sidebar.css({ 'top': _scrollTop } );
         },
         _initCss: function(args){
-            var ww = $(window).width(); //浏览器当前窗口可视区域宽度
-            var w = $(args.pageW).width();
+            // var w = $(window).width(); //浏览器当前窗口可视区域宽度
+            var w = $(args.pageW).width(); // 相对于某个的宽度
             $sidebar = $(args.wrapper);
-            if (args.pageContentWidth > 0 ) {
-                args.lrDistance = (ww - args.pageContentWidth)/2;
-                args.lrDistance = isIe6 ? (w - args.pageContentWidth) / 2 : args.lrDistance;
+            if (args.pageContentWidth > 0 && w > 980) {
+                args.lrDistance = (w - args.pageContentWidth) / 2 - args.width;
             }
 
             $sidebar.css({
@@ -63,7 +58,7 @@
                 'height': +args.height + 'px'
             });
 
-            if(args.position[0].toLowerCase() === 'left'){ 
+            if(args.position[0].toLowerCase() === 'left'){
                 $sidebar.css({
                     'left': args.lrDistance + 'px'
                 });
@@ -77,22 +72,19 @@
             var _this = this;
             _this._initCss(args);
             $sidebar = $(args.wrapper);
-            args.callfn();
-            /*var _scrollTop = $(window).scrollTop();
+            var _scrollTop = $(window).scrollTop();
             var _num = args.scrollTopShow;
-
             if (_scrollTop < _num) {
                 $sidebar.hide();
             } else {
                 $sidebar.show();
-            }*/
-
+            }
         },
         _isScrollLoad: function(args){
             var _this = this;
             if (args.scrollTopShow) {
                 _this._isShow(args);
-                $(window).scroll(function() {
+                args.scrollfn = $(window).scroll(function() {
                     _this._isShow(args);
                 });
 
@@ -107,11 +99,16 @@
 
             _this._isScrollLoad(args);
 
+            if($sidebar.css("display")=='none' && _this.scrollTopShow == 0){
+                $sidebar.css("display",'inline-block');
+            }
+
             // ie6特殊处理
             if(isIe6){
                 $sidebar.css('position','absolute');
                 _this._scroll(args);
-                $(window).scroll(function() {
+                args.scrollfn = $(window).scroll(function() {
+                    // alert(args.wrapper);
                     _this._scroll(args);
                 });
                 return;
