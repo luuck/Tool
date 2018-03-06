@@ -50,7 +50,11 @@
             var w = $(args.pageW).width(); // 相对于某个的宽度
             $sidebar = $(args.wrapper);
             if (args.pageContentWidth > 0 && w > 980) {
-                args.lrDistance = (w - args.pageContentWidth) / 2 - args.width;
+                // args.lrDistance = (w - args.pageContentWidth) / 2 - args.width;
+                // edit by 2018.03.06
+                if($(window).width() >= w){
+                    args.lrDistance = ($(window).width() - w) / 2 - args.width;
+                }
             }
 
             $sidebar.css({
