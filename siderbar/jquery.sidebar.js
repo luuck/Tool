@@ -103,7 +103,7 @@
 
             _this._isScrollLoad(args);
 
-            if($sidebar.css("display")=='none' && _this.scrollTopShow == 0){
+            if($sidebar.css("display")=='none' && args.scrollTopShow == 0){
                 $sidebar.css("display",'inline-block');
             }
 
