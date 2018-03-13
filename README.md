@@ -7,6 +7,6 @@
 ## 目录
  - breakballoon [击破气球](https://github.com/luuck/tool/tree/master/breakballoon) [Demo](https://luuck.github.io/tool/breakballoon/index.html)
  - siderbar [右悬浮窗](https://github.com/luuck/tool/tree/master/siderbar) [Demo](https://luuck.github.io/tool/siderbar/siderbar.html)
- - scrollbar [局部内无限滚动加载](https://github.com/luuck/tool/tree/master/scrollbar) [Demo](https://luuck.github.io/tool/scrollbar/1.0.0/scrollbar.html)
+ - scrollbar [局部内无限滚动加载](https://github.com/luuck/tool/tree/master/scrollbar) [Demo](https://luuck.github.io/tool/siderbar/siderbar-v1.3.0.html)
  - numscroll [数字滚动](https://github.com/luuck/tool/tree/master/numscroll) [Demo](https://luuck.github.io/tool/numscroll/index.html)
  - introtip [引导提示框](https://github.com/luuck/tool/tree/master/introtip) [Demo](https://luuck.github.io/tool/introtip/index.html)
